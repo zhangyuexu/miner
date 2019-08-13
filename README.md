@@ -54,7 +54,7 @@ canal.instance.dbPassword=数据库密码
     //任务1：
     {
       //实现类(单表的简单同步)
-      "className": "com.hebaibai.miner.job.TableSyncJob",
+      "className": "com.zyx.miner.job.TableSyncJob",
       //目标数据库，对应dataSource节点的xxx数据库配置
       "dataSource": "xxx",
       //属性配置
@@ -81,5 +81,5 @@ canal.instance.dbPassword=数据库密码
 ```
 
 ### 扩展
-1. 继承com.hebaibai.miner.job.Job
+1. 继承com.zyx.miner.job.Job
 2. 在minerConfig.json修改配置（dataSource，className必填）
