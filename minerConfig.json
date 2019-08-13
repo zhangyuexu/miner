@@ -1,0 +1,37 @@
+{
+  "appName": "miner",
+  "threadPoolSize": 10,
+  "canal": {
+    "ip": "127.0.0.1",
+    "port": 11111,
+    "user": "",
+    "password": ""
+  },
+  "dataSource": {
+    "datasource1": {
+      "driverClass": "com.mysql.jdbc.Driver",
+      "url": "jdbc:mysql://127.0.0.1:3306/ams?useUnicode=true&characterEncoding=utf-8&useSSL=false",
+      "username": "canal",
+      "password": "canal"
+    }
+  },
+  "jobs": [
+    {
+      "className": "com.zyx.miner.job.TableSyncJob",
+      "dataSource": "datasource1",
+      "prop": {
+        "database": "ams",
+        "table": "test_result",
+        "target": "test_case",
+        "mapping": {
+
+          "department_name": "department_name",
+          "test_case_name": "test_case_name",
+          "test_result": "last_test_result",
+          "testresult_time": "last_result_time",
+          "assert_info": "assert_info"
+        }
+      }
+    }
+  ]
+}
